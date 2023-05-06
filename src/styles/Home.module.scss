@@ -1,0 +1,47 @@
+.main {
+  display: flex;
+  flex-direction: column;
+
+  .intro {
+    display: flex;
+
+    .contentWrap {
+      width: 50%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 50px;
+      padding: 120px 60px 120px 120px;
+
+      .head {
+        .title {
+          font-size: calc(32px + (40 - 32) * (100vw - 384px) / (1440 - 384));
+          font-weight: 800;
+        }
+
+        .subtitle {
+          font-size: calc(22px + (40 - 32) * (100vw - 384px) / (1440 - 384));
+        }
+
+      }
+
+      .content {}
+
+      .pattern {
+        position: absolute;
+        right: 0;
+        top: 0;
+        mix-blend-mode: soft-light;
+        opacity: 0.5;
+        height: calc(100vw/5);
+        overflow: hidden;
+      }
+    }
+
+    .contentWrap.data {
+      background-color: #10375B;
+    }
+  }
+}
