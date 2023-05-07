@@ -1,57 +1,58 @@
 .slider {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+
+  .left {
+    width: 50%;
     display: flex;
-    flex-direction: row;
-    height: 100vh;
-    width: 100%;
+    align-items: center;
 
-    .left {
-        width: 50%;
-        display: flex;
-        align-items: center;
+    .content {
+      padding-left: 120px;
 
-        .content {
-            padding-left: 120px;
+      .title {
+        font-weight: 700;
+        font-size: calc(48px + (96 - 48) * (50vw - 768px) / (1440 - 384));
+        color: var(--normal-black);
+        margin-bottom: 8px;
+      }
 
-            .title {
-                font-weight: 700;
-                font-size: calc(48px + (96 - 48) * (50vw - 768px) / (1440 - 384));
-                color: var(--normal-black);
-                margin-bottom: 8px;
-            }
+      .description {
+        font-weight: 400;
+        font-size: calc(32px + (40 - 32) * (50vw - 768px) / (1440 - 384));
+        color: var(--normal-black);
+      }
 
-            .description {
-                font-weight: 400;
-                font-size: calc(32px + (40 - 32) * (50vw - 768px) / (1440 - 384));
-                color: var(--normal-black);
-            }
+      .action {
+        color: #1c1f23;
+        border: 3px solid #1c1f23;
+        border-radius: 10px;
+        background: none;
+        padding: calc(50vw * 0.016) calc(50vw * 0.06);
+        font-weight: 600;
+        font-size: calc(22px + (40 - 32) * (50vw - 768px) / (1440 - 384));
+        margin-top: 42px;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+      }
 
-            .action {
-                border: 3px solid #1C1F23;
-                border-radius: 10px;
-                background: none;
-                padding: calc(50vw*0.016) calc(50vw*0.06);
-                font-weight: 600;
-                font-size: calc(22px + (40 - 32) * (50vw - 768px) / (1440 - 384));
-                margin-top: 42px;
-                transition: all .3s ease-out;
-                cursor: pointer;
-            }
-
-            .action:hover {
-                background-color: #1C1F23;
-                color: white;
-            }
-        }
+      .action:hover {
+        background-color: #1c1f23;
+        color: white;
+      }
     }
+  }
 
-    .right {
-        width: 50%;
+  .right {
+    width: 50%;
 
-        .image {
-            object-fit: cover;
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
+    .image {
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
+  }
 }
