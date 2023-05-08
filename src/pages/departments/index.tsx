@@ -4,14 +4,12 @@ import PageTransition from '@/components/pageTransition';
 import { Inter } from 'next/font/google';
 import Image from 'next/image'
 import Link from 'next/link';
+import TransitionLayout from '@/components/transitionLayout';
 
-const Departments= forwardRef(function Department(props: {}, ref: ForwardedRef<HTMLDivElement>){
-  useEffect(()=>{
-    console.log('u r in department now')
-  },[])
+function Departments() {
   return (
     <>
-      <PageTransition ref={ref}>
+      <TransitionLayout>
         <main className={`${styles.main}`}>
           <div className={styles.description}>
             <p>
@@ -62,9 +60,9 @@ const Departments= forwardRef(function Department(props: {}, ref: ForwardedRef<H
             </Link>
           </div>
         </main>
-      </PageTransition>
+      </TransitionLayout>
     </>
   );
-})
+}
 
 export default Departments;

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import themeColor from '@/utils/colors';
 import { useAnimate } from 'framer-motion';
 
-function Slider(props: {
+function CTA(props: {
   title: string,
   description: string,
   action: string,
@@ -41,4 +41,4 @@ function Slider(props: {
 }
 
 
-export default Slider;
+export default CTA;

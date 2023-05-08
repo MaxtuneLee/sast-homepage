@@ -82,6 +82,7 @@
     background: url(https://aliyun.sastimg.mxte.cc/images/2022/10/20/_MG_8664.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     .title {
       font-family: "JetBrains Mono";
       font-weight: 700;
@@ -91,5 +92,15 @@
       top: 42px;
       left: 120px;
     }
+  }
+  .departments{
+    display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 50px;
+      padding: 120px 60px 120px 120px;
+      height: 700px;
   }
 }

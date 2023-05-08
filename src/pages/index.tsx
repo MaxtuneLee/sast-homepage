@@ -4,21 +4,16 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import { ForwardedRef, forwardRef, useEffect } from "react";
 import PageTransition from "@/components/pageTransition";
-import Slider from "@/components/slider";
+import CTA from "@/components/CTA";
 import Link from "next/link";
 import Header from "@/components/header";
 import { JetBrainsMonoBold, JetBrainsMonoRegular } from "@/styles/fonts/fonts";
+import TransitionLayout from "@/components/transitionLayout";
 
-const Home = forwardRef(function Homepage(
-  props: {},
-  ref: ForwardedRef<HTMLDivElement>
-) {
-  useEffect(() => {
-    console.log("u r in home now");
-  }, []);
+function Home() {
   return (
     <>
-      <PageTransition ref={ref}>
+      <TransitionLayout>
         <Head>
           <title>南京邮电大学大学生科学技术协会</title>
           <meta name="description" content="一个学生组织" />
@@ -28,7 +23,7 @@ const Home = forwardRef(function Homepage(
         <main className={`${styles.main}`}>
           <Header />
           <section id="top">
-            <Slider
+            <CTA
               color="#FFB422"
               title="Igniting the thought."
               description="SAST 全新官网上线"
@@ -141,10 +136,13 @@ const Home = forwardRef(function Homepage(
               2021年会
             </div>
           </section>
+          <section id="departments" className={styles.departments}>
+            
+          </section>
         </main>
-      </PageTransition>
+      </TransitionLayout>
     </>
   );
-});
+};
 
 export default Home;
