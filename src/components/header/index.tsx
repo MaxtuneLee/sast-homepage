@@ -29,8 +29,9 @@ function Header() {
       style={
         scrolled
           ? {
-              backgroundColor: "rgb(255 255 255 / 50%)",
+              backgroundColor: "rgb(255 255 255 / 70%)",
               backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: 'blur(15px)',
               borderWidth: "0px 0px 1px 0px",
               borderStyle: "solid",
               borderImage: "linear-gradient(to right, rgb(0 0 0 / 30%) 0%, rgb(255 255 255) 70%) 1",

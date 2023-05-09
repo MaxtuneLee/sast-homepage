@@ -6,25 +6,28 @@ import { JetBrainsMonoBold, JetBrainsMonoRegular } from "@/styles/fonts/fonts";
 import TransitionLayout from "@/components/transitionLayout";
 import { cta } from "@/types/cta";
 import Slide from "@/components/slide";
+import Card from "@/components/card";
 
 const slidePages: cta[] = [
   {
-    color: '#FFB422',
-    title: 'Igniting the thought.',
-    description: 'SAST 全新官网上线',
-    action: '有什么新鲜功能  ￫',
-    href: '/about',
-    image: 'https://aliyun.sastimg.mxte.cc/images/2023/05/06/_a96c5293-9d5a-4ccf-ae2a-fae32646d4ab0961070d1ee9e4e7.jpg'
+    color: "#FFB422",
+    title: "Igniting the thought.",
+    description: "SAST 全新官网上线",
+    action: "有什么新鲜功能  ￫",
+    href: "/about",
+    image:
+      "https://aliyun.sastimg.mxte.cc/images/2023/05/06/_a96c5293-9d5a-4ccf-ae2a-fae32646d4ab0961070d1ee9e4e7.jpg",
   },
   {
-    color: '#ccd4e3',
-    title: '一个一个一个标题',
-    description: '一个一个一个描述的问题',
-    action: '了解更多',
-    href: '/about',
-    image: 'https://aliyun.sastimg.mxte.cc/images/2022/10/02/D5766E4DBA6752DBED9223F157F68505.jpg'
-  }
-]
+    color: "#ccd4e3",
+    title: "一个一个一个标题",
+    description: "一个一个一个描述的问题",
+    action: "了解更多",
+    href: "/about",
+    image:
+      "https://aliyun.sastimg.mxte.cc/images/2022/10/02/D5766E4DBA6752DBED9223F157F68505.jpg",
+  },
+];
 
 function Home() {
   return (
@@ -147,12 +150,54 @@ function Home() {
             </div>
           </section>
           <section id="departments" className={styles.departments}>
-
+            <div className={styles.contentWrap}>
+              <div className={styles.head}>
+                <div
+                  className={`${styles.title} ${JetBrainsMonoBold.className}`}
+                >
+                  我们的部门
+                </div>
+                <div
+                  className={`${styles.subtitle} ${JetBrainsMonoBold.className}`}
+                >
+                  Our Departments
+                </div>
+                <div>
+                  在校科协，每个人都能找到属于自己的位置，你想从哪里开始你的故事呢？
+                </div>
+              </div>
+            <div className={styles.departmentCardWrap}>
+              <Card
+                icon="/icons/engineering.png"
+                title="聚集源自于兴趣"
+                description="社团始于兴趣相投，南邮校科协始终坚持初心，将兴趣作为一直以来的驱动力。在南邮校科协的技术类部门，每一位同学都是因为共同的兴趣爱好或者相似的追求而聚集在一起。在这里，互相帮助、共同进步是一个不变的主题。开源平等、薪火相传是科协一直坚守不变的使命。"
+                link="/department/tech"
+                linkText="探索校科协技术类部门  ￫"
+                linkColor="#EB7900"
+              />
+              <Card
+                icon="/icons/engineering.png"
+                title="互联网管理思维"
+                description="科协的建设和形象与管理类部门密不可分。在科协，管理类部门承载着三十届以来科协建设的点点滴滴。自由、开放、交流，这是贯穿在科协人骨子里的特质。在科协，我们剔除掉形式主义，归繁杂琐事于至简至善。高质高效，是我们最终期待的目的。"
+                link="/department/office"
+                linkText="探索校科协建设类部门  ￫"
+                linkColor="#0E848A"
+              />
+              <Card
+                icon="/icons/engineering.png"
+                title="聚集源自于兴趣"
+                description="社团始于兴趣相投，南邮校科协始终坚持初心，将兴趣作为一直以来的驱动力。在南邮校科协的技术类部门，每一位同学都是因为共同的兴趣爱好或者相似的追求而聚集在一起。在这里，互相帮助、共同进步是一个不变的主题。开源平等、薪火相传是科协一直坚守不变的使命。"
+                link="/department/rnd"
+                linkText="探索校科协技术类部门  ￫"
+                linkColor="#EB7900"
+              />
+            </div>
+            </div>
           </section>
         </main>
       </TransitionLayout>
     </>
   );
-};
+}
 
 export default Home;

@@ -4,10 +4,7 @@
 
   section {
     width: 100%;
-  }
-
-  .intro {
-    display: flex;
+    background: white;
 
     .contentWrap {
       width: 50%;
@@ -17,9 +14,12 @@
       justify-content: center;
       align-items: flex-start;
       gap: 50px;
-      padding: 120px 60px 120px 120px;
+      padding: 120px 120px 120px 120px;
 
       .head {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         .title {
           font-size: calc(32px + (40 - 32) * (100vw - 384px) / (1440 - 384));
           font-weight: 800;
@@ -29,7 +29,13 @@
           font-size: calc(22px + (40 - 32) * (100vw - 384px) / (1440 - 384));
         }
       }
+    }
+  }
 
+  .intro {
+    display: flex;
+
+    .contentWrap {
       .content {
       }
 
@@ -44,16 +50,20 @@
         object-fit: contain;
         overflow: hidden;
       }
+
       .dataWrap {
         color: white;
         display: flex;
         max-width: 824px;
         flex-wrap: wrap;
+
         .dataItem {
           height: 110px;
           width: 200px;
+
           .dataNumber {
             font-size: calc(32px + (40 - 32) * (100vw - 384px) / (1440 - 384));
+
             .unit {
               font-family: "JetBrains Mono";
               font-size: calc(
@@ -63,6 +73,7 @@
               margin-left: 6px;
             }
           }
+
           .dataDescription {
             font-weight: 400;
             line-height: 29px;
@@ -75,6 +86,7 @@
       background-color: #10375b;
     }
   }
+
   .photo {
     content: "";
     height: calc(100vh - 80px);
@@ -83,6 +95,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+
     .title {
       font-family: "JetBrains Mono";
       font-weight: 700;
@@ -93,14 +106,24 @@
       left: 120px;
     }
   }
-  .departments{
-    display: flex;
-      position: relative;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 50px;
-      padding: 120px 60px 120px 120px;
-      height: 700px;
+
+  .departments {
+    background: url("/background_pattern_2.png");
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    .contentWrap {
+      width: auto;
+      .departmentCardWrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+      }
+      .departmentCardWrap > div {
+        flex-basis: 31.2%;
+      }
+    }
   }
 }
