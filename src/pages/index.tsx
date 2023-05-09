@@ -1,14 +1,30 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
-import { ForwardedRef, forwardRef, useEffect } from "react";
-import PageTransition from "@/components/pageTransition";
-import CTA from "@/components/CTA";
-import Link from "next/link";
 import Header from "@/components/header";
 import { JetBrainsMonoBold, JetBrainsMonoRegular } from "@/styles/fonts/fonts";
 import TransitionLayout from "@/components/transitionLayout";
+import { cta } from "@/types/cta";
+import Slide from "@/components/slide";
+
+const slidePages: cta[] = [
+  {
+    color: '#FFB422',
+    title: 'Igniting the thought.',
+    description: 'SAST 全新官网上线',
+    action: '有什么新鲜功能  ￫',
+    href: '/about',
+    image: 'https://aliyun.sastimg.mxte.cc/images/2023/05/06/_a96c5293-9d5a-4ccf-ae2a-fae32646d4ab0961070d1ee9e4e7.jpg'
+  },
+  {
+    color: '#ccd4e3',
+    title: '一个一个一个标题',
+    description: '一个一个一个描述的问题',
+    action: '了解更多',
+    href: '/about',
+    image: 'https://aliyun.sastimg.mxte.cc/images/2022/10/02/D5766E4DBA6752DBED9223F157F68505.jpg'
+  }
+]
 
 function Home() {
   return (
@@ -23,13 +39,7 @@ function Home() {
         <main className={`${styles.main}`}>
           <Header />
           <section id="top">
-            <CTA
-              color="#FFB422"
-              title="Igniting the thought."
-              description="SAST 全新官网上线"
-              action="有什么新鲜功能  ￫"
-              image="https://aliyun.sastimg.mxte.cc/images/2023/05/06/_a96c5293-9d5a-4ccf-ae2a-fae32646d4ab0961070d1ee9e4e7.jpg"
-            />
+            <Slide pages={slidePages} />
           </section>
           <section id="intro" className={styles.intro}>
             <div className={styles.contentWrap}>
@@ -137,7 +147,7 @@ function Home() {
             </div>
           </section>
           <section id="departments" className={styles.departments}>
-            
+
           </section>
         </main>
       </TransitionLayout>
