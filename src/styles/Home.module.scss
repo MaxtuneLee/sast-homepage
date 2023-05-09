@@ -13,20 +13,28 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      gap: 50px;
       padding: 120px 120px 120px 120px;
+      gap: 50px;
 
-      .head {
+      .contentBox {
+        max-width: 1200px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        .title {
-          font-size: calc(32px + (40 - 32) * (100vw - 384px) / (1440 - 384));
-          font-weight: 800;
-        }
+        gap: 50px;
 
-        .subtitle {
-          font-size: calc(22px + (40 - 32) * (100vw - 384px) / (1440 - 384));
+        .head {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .title {
+            font-size: calc(32px + (40 - 32) * (100vw - 384px) / (1440 - 384));
+            font-weight: 800;
+          }
+
+          .subtitle {
+            font-size: calc(22px + (40 - 32) * (100vw - 384px) / (1440 - 384));
+          }
         }
       }
     }
@@ -36,8 +44,9 @@
     display: flex;
 
     .contentWrap {
-      .content {
-      }
+      align-items: flex-end;
+
+      .content {}
 
       .pattern {
         position: absolute;
@@ -54,21 +63,22 @@
       .dataWrap {
         color: white;
         display: flex;
-        max-width: 824px;
+        max-width: 1200px;
         flex-wrap: wrap;
 
         .dataItem {
-          height: 110px;
-          width: 200px;
+          min-height: 110px;
+          min-width: 200px;
+          display: flex;
+          flex-direction: column;
+          flex-basis: 30%;
 
           .dataNumber {
             font-size: calc(32px + (40 - 32) * (100vw - 384px) / (1440 - 384));
 
             .unit {
               font-family: "JetBrains Mono";
-              font-size: calc(
-                12px + (40 - 32) * (100vw - 384px) / (1440 - 384)
-              );
+              font-size: calc(12px + (40 - 32) * (100vw - 384px) / (1440 - 384));
               font-weight: 700;
               margin-left: 6px;
             }
@@ -84,6 +94,7 @@
 
     .contentWrap.data {
       background-color: #10375b;
+      align-items: flex-start;
     }
   }
 
@@ -112,8 +123,13 @@
     background-position: center;
     background-size: cover;
     background-color: white;
+    display: flex;
+    justify-content: center;
+
     .contentWrap {
       width: auto;
+      max-width: var(--safe-width);
+
       .departmentCardWrap {
         display: flex;
         flex-direction: row;
@@ -121,7 +137,8 @@
         justify-content: space-around;
         align-items: stretch;
       }
-      .departmentCardWrap > div {
+
+      .departmentCardWrap>div {
         flex-basis: 31.2%;
       }
     }

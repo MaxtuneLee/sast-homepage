@@ -41,26 +41,6 @@ function Slide(props: {
     const { image, ...ret } = page
     return ret
   })
-  const variants = {
-    enter: (direction: number) => {
-      return {
-        x: direction > 0 ? 1000 : -1000,
-        opacity: 0
-      };
-    },
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction: number) => {
-      return {
-        zIndex: 0,
-        x: direction < 0 ? 1000 : -1000,
-        opacity: 0
-      };
-    }
-  };
   /**
  * Experimenting with distilling swipe offset and velocity into a single variable, so the
  * less distance a user has swiped, the more velocity they need to register as a swipe.
@@ -74,6 +54,7 @@ function Slide(props: {
   const paginate = (newDirection: number) => {
     setPage([currentPage + newDirection, newDirection]);
   };
+
   return (
     <div className={styles.slider}>
       {/* <div className={styles.left} style={{ background: props.color }}>
@@ -144,13 +125,13 @@ function Slide(props: {
         // }}
         /> */}
         <div className={styles.right}>
-          <motion.div className={`${styles.imageWrap} imageWrap`} initial={{ x: 0 }} animate={{ x: `calc(-${currentPage} * (${100}%))` }} ref={imgScope} transition={{ duration: .5, ease: 'easeInOut' }}>
+          <motion.div className={`${styles.imageWrap} imageWrap`} initial={{ x: 0 }} animate={{ x: `calc(-${currentPage} * (${50}vw))` }} ref={imgScope} transition={{ duration: .5, ease: 'easeInOut' }}>
             {
               imageArray.map((page, index) => (
                 <Image priority src={page} key={index} alt="background" className={styles.image} width='1920' height='1080' />
               ))
             }
-          </motion.div>   
+          </motion.div>
         </div>
       </AnimatePresence>
     </div>

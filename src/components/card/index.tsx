@@ -16,8 +16,8 @@ function Card(props: card) {
       }}
       whileHover={{
         scale: 1.001,
-        x: 5,
-        y: -5,
+        x: 3,
+        y: -3,
         boxShadow: "-3px 3px 0px 0px rgba(0,0,0,1)",
         transition: {
           duration: 0.2,
