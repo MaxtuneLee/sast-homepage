@@ -1,3 +1,4 @@
+@use '@/styles/_variable' as variable;
 .main {
   display: flex;
   flex-direction: column;
@@ -17,7 +18,7 @@
       gap: 50px;
 
       .contentBox {
-        max-width: 1200px;
+        // max-width: 1200px;
         display: flex;
         flex-direction: column;
         gap: 50px;
@@ -41,10 +42,13 @@
   }
 
   .intro {
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
 
     .contentWrap {
       align-items: flex-end;
+      flex-grow: 1;
+      // min-width: 40rem;
 
       .content {}
 
@@ -77,7 +81,7 @@
             font-size: calc(32px + (40 - 32) * (100vw - 384px) / (1440 - 384));
 
             .unit {
-              font-family: "JetBrains Mono";
+              font-family: sans-serif;
               font-size: calc(12px + (40 - 32) * (100vw - 384px) / (1440 - 384));
               font-weight: 700;
               margin-left: 6px;
@@ -102,7 +106,7 @@
     content: "";
     height: calc(100vh - 80px);
     position: relative;
-    background: url(https://aliyun.sastimg.mxte.cc/images/2022/10/20/_MG_8664.jpg);
+    background: url('../../public/2023.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -114,7 +118,7 @@
       color: white;
       position: absolute;
       top: 42px;
-      left: 120px;
+      left: 3rem;
     }
   }
 
@@ -136,10 +140,42 @@
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: stretch;
+        @media (max-width: variable.$mobile-breakpoint) {
+          gap: 20px;
+        }
       }
 
       .departmentCardWrap>div {
-        flex-basis: 31.2%;
+        flex-basis: 49%;
+      }
+    }
+  }
+}
+@media (max-width: variable.$mobile-breakpoint) {
+  .main{
+    section{
+      .contentWrap{
+        padding: 50px;
+        width: 100%;
+      }
+    }
+    .intro{
+      flex-direction: column;
+      .contentWrap{
+        .pattern{
+          width: 75vw;
+          height: auto;
+        }
+      }
+    }
+    .departments{
+      .contentWrap{
+        .departmentCardWrap{
+          gap: 20px;
+          >div{
+            flex-basis: 100%;
+          }
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/Card.module.scss";
+import styles from "./Card.module.scss";
 import { card } from "@/types/card";
 import Link from "next/link";
 import Image from "next/image";

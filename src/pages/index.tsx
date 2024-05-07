@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "@/styles/Home.module.scss";
+import styles from "./Home.module.scss";
 import Header from "@/components/header";
 import { JetBrainsMonoBold, JetBrainsMonoRegular } from "@/styles/fonts/fonts";
 import TransitionLayout from "@/components/transitionLayout";
@@ -10,43 +10,17 @@ import Card from "@/components/card";
 import { RoughNotation } from "react-rough-notation";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import Footer from "@/components/footer";
 
 const slidePages: cta[] = [
   {
     color: "#FFB422",
     title: "Igniting the thought.",
-    description: "SAST 全新官网上线",
-    action: "有什么新鲜功能  ￫",
-    href: "/about",
+    description: "在校科协点亮你的思想",
+    // action: "Learn more about SAST",
+    // href: "/about",
     image:
       "https://aliyun.sastimg.mxte.cc/images/2023/05/06/_a96c5293-9d5a-4ccf-ae2a-fae32646d4ab0961070d1ee9e4e7.jpg",
-  },
-  {
-    color: "#ccd4e3",
-    title: "一个一个一个标题",
-    description: "一个一个一个描述的问题",
-    action: "了解更多",
-    href: "/about",
-    image:
-      "https://aliyun.sastimg.mxte.cc/images/2022/10/02/D5766E4DBA6752DBED9223F157F68505.jpg",
-  },
-  {
-    color: "#FFB422",
-    title: "Igniting the thought.",
-    description: "SAST 全新官网上线",
-    action: "有什么新鲜功能  ￫",
-    href: "/about",
-    image:
-      "https://aliyun.sastimg.mxte.cc/images/2023/05/06/_a96c5293-9d5a-4ccf-ae2a-fae32646d4ab0961070d1ee9e4e7.jpg",
-  },
-  {
-    color: "#ccd4e3",
-    title: "一个一个一个标题",
-    description: "一个一个一个描述的问题",
-    action: "了解更多",
-    href: "/about",
-    image:
-      "https://aliyun.sastimg.mxte.cc/images/2022/10/02/D5766E4DBA6752DBED9223F157F68505.jpg",
   },
 ];
 
@@ -64,7 +38,7 @@ function Home() {
         </Head>
         <main className={`${styles.main}`}>
           <Header />
-          <section id="top">
+          <section id="top" style={{ height: '100vh' }}>
             <Slide pages={slidePages} />
           </section>
           <section id="intro" className={styles.intro}>
@@ -172,7 +146,7 @@ function Home() {
           </section>
           <section id="photo" className={styles.photo}>
             <div className={styles.title} style={JetBrainsMonoBold.style}>
-              2021年会
+              2023年会
             </div>
           </section>
           <section id="departments" className={styles.departments}>
@@ -205,7 +179,7 @@ function Home() {
                   icon="/icons/rnd.svg"
                   title="聚集源自于兴趣"
                   description="社团始于兴趣相投，南邮校科协始终坚持初心，将兴趣作为一直以来的驱动力。在南邮校科协的技术类部门，每一位同学都是因为共同的兴趣爱好或者相似的追求而聚集在一起。在这里，互相帮助、共同进步是一个不变的主题。开源平等、薪火相传是科协一直坚守不变的使命。"
-                  link="/department/tech"
+                  link="/departments/technology"
                   linkText="探索校科协技术类部门  ￫"
                   linkColor="#21a2e6"
                 />
@@ -213,20 +187,23 @@ function Home() {
                   icon="/icons/smile.svg"
                   title="互联网管理思维"
                   description="科协的建设和形象与管理类部门密不可分。在科协，管理类部门承载着三十届以来科协建设的点点滴滴。自由、开放、交流，这是贯穿在科协人骨子里的特质。在科协，我们剔除掉形式主义，归繁杂琐事于至简至善。高质高效，是我们最终期待的目的。"
-                  link="/department/office"
+                  link="/departments/construction"
                   linkText="探索校科协建设类部门  ￫"
                   linkColor="#d3217b"
                 />
-                <Card
+                {/* <Card
                   icon="/icons/light_bulb.svg"
                   title="聚集源自于兴趣"
                   description="社团始于兴趣相投，南邮校科协始终坚持初心，将兴趣作为一直以来的驱动力。在南邮校科协的技术类部门，每一位同学都是因为共同的兴趣爱好或者相似的追求而聚集在一起。在这里，互相帮助、共同进步是一个不变的主题。开源平等、薪火相传是科协一直坚守不变的使命。"
                   link="/department/rnd"
                   linkText="探索校科协技术类部门  ￫"
                   linkColor="#ea9518"
-                />
+                /> */}
               </div>
             </div>
+          </section>
+          <section id='footer'>
+            <Footer />
           </section>
         </main>
       </TransitionLayout>

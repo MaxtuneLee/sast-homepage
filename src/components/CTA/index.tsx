@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { JetBrainsMonoBold } from '@/styles/fonts/fonts';
-import styles from '@/styles/CTA.module.scss'
+import styles from './CTA.module.scss'
 import Image from 'next/image';
 import themeColor from '@/utils/colors';
 import { useAnimate } from 'framer-motion';
@@ -10,9 +10,9 @@ import Link from 'next/link';
 function CTA(props: cta) {
   const [scope, animate] = useAnimate()
   useEffect(() => {
-    animate([["h2", { opacity: [0, 1], y: [100, 0] }, { at: 0, ease: 'easeInOut', duration: .8 }],
-    ["p", { opacity: [0, 1], y: [100, 0] }, { at: +0.2, ease: 'easeInOut', duration: .8 }],
-    ["button", { opacity: [0, 1], y: [100, 0] }, { at: +0.3, ease: 'easeInOut', duration: .8 }]])
+    animate([["h2", { opacity: [0, 1], y: [20, 0] }, { at: 0, ease: 'easeInOut', duration: .8 }],
+    ["p", { opacity: [0, 1], y: [20, 0] }, { at: +0.2, ease: 'easeInOut', duration: .8 }],
+    ["button", { opacity: [0, 1], y: [20, 0] }, { at: +0.3, ease: 'easeInOut', duration: .8 }]])
   }, [])
   return (
     <div className={styles.cta}>
@@ -24,15 +24,19 @@ function CTA(props: cta) {
           <p className={`${styles.description} ${JetBrainsMonoBold.className}`}>
             {props.description}
           </p>
-          <Link href={props.href} >
-            <button className={styles.action}>
-              {props.action}
-            </button>
-          </Link>
+          {
+            props.href ? (
+              <Link href={props.href} >
+                <button className={styles.action}>
+                  {props.action}
+                </button>
+              </Link>
+            ) : <></>
+          }
         </div>
       </div>
       <div className={styles.right}>
-        <Image priority src={props.image} alt="background" className={styles.image} width='500' height='500' />
+        <Image priority src={props.image} alt="background" className={styles.image} width='1920' height='1080' />
       </div>
     </div>
   );

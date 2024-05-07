@@ -1,0 +1,65 @@
+@use '@/styles/_variable.scss' as variable;
+.footerWrap{
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 120px 80px 120px;
+    .divide{
+        height: 2px;
+        background-color: #fff;
+        opacity: .2;
+        margin: 50px 0;
+    }
+    .bottom{
+        opacity: .5;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .footerBody{
+        opacity: .5;
+        width: auto;
+        max-width: var(--safe-width);
+        display: flex;
+        gap: 50px;
+        .footerSection{
+            flex: 1 1 auto;
+            max-width: 200px;
+            .title{
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 25px;
+            }
+            .content{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .link{
+                    cursor: pointer;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                .item{
+
+                }
+            }
+        }
+    }
+    @media (max-width: variable.$mobile-breakpoint) {
+        padding: 50px;
+        .footerBody{
+            flex-direction: column;
+            gap: 20px;
+            .footerSection{
+                max-width: 100%;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}

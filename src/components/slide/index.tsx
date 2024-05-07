@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import styles from '@/styles/Slide.module.scss'
+import styles from './Slide.module.scss'
 import { AnimatePresence, useAnimate, motion } from 'framer-motion';
 import { JetBrainsMonoBold } from '@/styles/fonts/fonts';
 import { cta } from '@/types/cta';
@@ -31,9 +31,9 @@ function Slide(props: {
   }, [])
   console.log(currentPage)
   useEffect(() => {
-    animate([["h2", { opacity: [0, 1], y: [100, 0] }, { at: 0, ease: 'easeInOut', duration: .8 }],
-    ["p", { opacity: [0, 1], y: [100, 0] }, { at: +0.2, ease: 'easeInOut', duration: .8 }],
-    ["button", { opacity: [0, 1], y: [100, 0] }, { at: +0.3, ease: 'easeInOut', duration: .8 }],])
+    animate([["h2", { opacity: [0, 1], y: [20, 0] }, { at: 0, ease: 'easeInOut', duration: .8 }],
+    ["p", { opacity: [0, 1], y: [20, 0] }, { at: +0.2, ease: 'easeInOut', duration: .8 }],
+    ["button", { opacity: [0, 1], y: [20, 0] }, { at: +0.3, ease: 'easeInOut', duration: .8 }],])
     imgAnimate([imgScope.current, { opacity: [0, 1], x: -currentPageRef.current * window.innerWidth / 2 }, { at: 0, ease: 'easeIn', duration: 1 }])
   }, [currentPage])
   const imageArray: string[] = props.pages.map((page: cta) => page.image)
@@ -90,11 +90,15 @@ function Slide(props: {
             <p className={`${styles.description} ${JetBrainsMonoBold.className}`}>
               {pageInfoArray[currentPage].description}
             </p>
-            <Link href={pageInfoArray[currentPage].href}>
-              <button className={styles.action}>
-                {pageInfoArray[currentPage].action}
-              </button>
-            </Link>
+            {
+              pageInfoArray[currentPage].href ? (
+                <Link href={pageInfoArray[currentPage].href as string}>
+                  <button className={styles.action}>
+                    {pageInfoArray[currentPage].action}
+                  </button>
+                </Link>
+              ) : <></>
+            }
           </div>
         </motion.div>
       </AnimatePresence>
@@ -125,7 +129,7 @@ function Slide(props: {
         // }}
         /> */}
         <div className={styles.right}>
-          <motion.div className={`${styles.imageWrap} imageWrap`} initial={{ x: 0 }} animate={{ x: `calc(-${currentPage} * (${50}vw))` }} ref={imgScope} transition={{ duration: .5, ease: 'easeInOut' }}>
+          <motion.div className={`${styles.imageWrap} imageWrap`} initial={{ x: 0 }} animate={{ x: `calc(-${currentPage} * (${100}vw))` }} ref={imgScope} transition={{ duration: .5, ease: 'easeInOut' }}>
             {
               imageArray.map((page, index) => (
                 <Image priority src={page} key={index} alt="background" className={styles.image} width='1920' height='1080' />
